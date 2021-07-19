@@ -24,9 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2fie4(71)6%c6#_y1vj8bx4j_aq&dt^x+j@j)9nnl0j-&=v04i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # pythonanywhere 설정 : False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1' # localhost
+    # 'a2082761.pythonanywhere.com' # pythonanywhere 설정
+]
 
 
 # Application definition
@@ -116,7 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+# static 폴더 : static files를 관리하는 폴더
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -124,6 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+# pythonanywhere 설정 : static 파일을 전부다 수집을 한 다음에 제공, 장고에서 수집하는 기능을 통해 제공됨
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
